@@ -8,8 +8,7 @@ CMD ["catalina.sh", "run"]
 WORKDIR /boxfuse-sample-java-war-hello/
 COPY /boxfuse-sample-java-war-hello/ /boxfuse-sample-java-war-hello/
 RUN mvn package
-WORKDIR /target/
-ADD /target/hello-1.0.war /var/lib/tomcat9/webapps/
+
 
 
 
