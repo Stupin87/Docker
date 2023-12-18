@@ -3,7 +3,7 @@
 version: '3'
 services:
     build:
-        context: ./build_app
+        context: ../build_app
         dockerfile: Dockerfile
     volumes:
         - './app/boxfuse-sample-java-war-hello:/home/boxfuse-sample-java-war-hello'
