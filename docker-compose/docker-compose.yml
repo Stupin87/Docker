@@ -4,7 +4,7 @@ version: '3'
 services:
     java_app:
         build:
-            context: ../build_app
+            context: ./build_app
             dockerfile: Dockerfile
         volumes:
             - './app/boxfuse-sample-java-war-hello:/app/boxfuse-sample-java-war-hello'
