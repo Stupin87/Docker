@@ -10,7 +10,7 @@ services:
             - '../app/boxfuse-sample-java-war-hello:/app/boxfuse-sample-java-war-hello'
        
 tomcat:
-     image: tomcat:9-jdk11
+     image: tomcat:latest
      ports:
          - '8080:8080'
      volumes:
