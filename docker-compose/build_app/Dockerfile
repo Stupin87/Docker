@@ -3,6 +3,6 @@ USER root
 RUN apt update
 RUN apt install -y default-jdk
 RUN apt install -y maven 
-WORKDIR /app/boxfuse-sample-java-war-hello
+WORKDIR /home/keglia/Docker/docker-compose/app/boxfuse-sample-java-war-hello
 RUN mvn package
 
