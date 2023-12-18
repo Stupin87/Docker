@@ -8,10 +8,10 @@ services:
             dockerfile: Dockerfile
         volumes:
             - '../app/boxfuse-sample-java-war-hello:/app/boxfuse-sample-java-war-hello'
-       
-tomcat:
+    depends_on: java_app      
+web:
      image: tomcat:latest
      ports:
          - '8080:8080'
      volumes:
-         - './usr/local/tomcat/webapps:/usr/local/tomcat/webapps'           
+         - './home/boxfuse-sample-java-war-hello/target/hello-1.0.war:/usr/local/tomcat/webapps'           
