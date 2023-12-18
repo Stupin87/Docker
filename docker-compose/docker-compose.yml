@@ -8,7 +8,8 @@ services:
             dockerfile: Dockerfile
         volumes:
             - '../app/boxfuse-sample-java-war-hello:/app/boxfuse-sample-java-war-hello'
-    depends_on: java_app      
+        depends_on: 
+            - java_app      
 web:
      image: tomcat:9-jdk11
      ports:
