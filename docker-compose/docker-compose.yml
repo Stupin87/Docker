@@ -1,6 +1,6 @@
 ---
 
-version: '2'
+version: '3'
 services:
     java_app:
         build:
@@ -10,9 +10,9 @@ services:
             - '../app/boxfuse-sample-java-war-hello:/app/boxfuse-sample-java-war-hello'
         depends_on: 
             - java_app      
-web:
-     image: tomcat:9-jdk11
-     ports:
+    web:
+        image: tomcat:9-jdk11
+        ports:
          - '8080:8080'
-     volumes:
+        volumes:
          - './home/boxfuse-sample-java-war-hello/target/hello-1.0.war:/usr/local/tomcat/webapps'           
