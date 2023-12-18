@@ -7,7 +7,7 @@ services:
             context: ../build_app
             dockerfile: Dockerfile
         volumes:
-            - '../app/boxfuse-sample-java-war-hello:/app/boxfuse-sample-java-war-hello'
+            - './app/boxfuse-sample-java-war-hello:/app/boxfuse-sample-java-war-hello'
             
     web:
         image: tomcat:9-jdk11
