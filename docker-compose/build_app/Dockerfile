@@ -2,6 +2,6 @@ FROM ubuntu:18:04
 RUN apt update
 RUN apt install -y default-jdk
 RUN apt install -y maven 
-WORKDIR /home/keglia/app/boxfuse-sample-java-war-hello
+WORKDIR /app/boxfuse-sample-java-war-hello
 RUN mvn package
 RUN mv /home/boxfuse-sample-java-war-hello/target/hello-1.0.war /usr/local/tomcat/webapps
