@@ -1,1 +1,16 @@
+---
 
+version: '3'
+services:
+    build:
+        context: ./build_app
+        dockerfile: Dockerfile
+    volumes:
+        - './app/boxfuse-sample-java-war-hello:/home/boxfuse-sample-java-war-hello'
+       
+tomcat:
+     image: tomcat:9-jdk11
+     ports:
+         - '8080:8080'
+     volumes:
+         - './usr/local/tomcat/webapps'           
