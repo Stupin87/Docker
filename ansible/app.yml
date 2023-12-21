@@ -7,7 +7,7 @@
     - name: Installing Packages
       apt:
         name:
-          - tomcat:latest
+          - tomcat
           - git
           - maven        
         state: present
