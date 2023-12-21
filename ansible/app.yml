@@ -7,7 +7,7 @@
     - name: Installing Packages
       apt:
         name:
-          - tomcat:9-jdk11
+          - tomcat:latest
           - git
           - maven        
         state: present
