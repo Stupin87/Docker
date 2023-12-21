@@ -43,8 +43,9 @@
         
     - name: Copying a project
       copy:
-        remote_src: /home/keglia_new/target/hello-1.0.war
+        src: /home/keglia_new/target/hello-1.0.war
         dest: /usr/local/tomcat/webapps
+        remote_src: true
         delete: yes
 
     
