@@ -1,1 +1,44 @@
+---
+- name: Installing and configuring the environment
+  hosts: build_node
+  become: true
 
+  tasks:
+    - name: Installing Packages
+      apt:
+        name:
+          - update
+          -tomcat:9-jdk11
+          - git
+          - maven        
+        state: present
+
+- name: Building a project
+  hosts: build_node
+  become: true
+
+  tasks:
+    - name: Cloning a repository
+      git:
+        repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+        dest: /home/keglia/
+        version: master
+      register: git_clone_status
+
+      - name: Building a project
+      command: mvn package /home/keglia/boxfuse-sample-java-war-hello
+      register: build_status
+      changed_when: False
+
+- name: Project Launch
+  hosts: app_node
+  become: true
+
+  tasks:
+    - name: Copying a project
+      copy:
+        src: /home/keglia/boxfuse-sample-java-war-hello/target/hello-1.0.war
+        dest: /usr/local/tomcat/webapps
+        delete: yes
+
+    
