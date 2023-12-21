@@ -1,0 +1,13 @@
+name:  nginx
+  hosts: build_node
+  become: yes
+  tasks:
+    - name: install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: index.html
+      copy:
+        content: "<p><script> document.write(new Date().toLocaleDateString()); </script></p>"
+        dest: /var/www/html/index.html
