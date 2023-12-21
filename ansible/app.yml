@@ -45,7 +45,7 @@
       copy:
         src: /home/keglia_new/target/hello-1.0.war
         dest: /usr/local/tomcat/webapps
-        remote_src: true
+        remote_src: yes
         delete: yes
 
     
