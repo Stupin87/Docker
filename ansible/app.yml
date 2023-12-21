@@ -8,7 +8,7 @@
       apt:
         name:
           - default-jdk
-          - tomcat
+          - tomcat9
           - git
           - maven        
         state: present
