@@ -1,5 +1,5 @@
 ---
--name:  nginx
+- name:  nginx
   hosts: build_node
   become: yes
   tasks:
