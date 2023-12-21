@@ -25,7 +25,9 @@
       register: git_clone_status
 
     - name: Building a project
-      command: mvn package
+      command: mvn package 
+      args:
+         chdir: /home/keglia_new
       register: build_status
       changed_when: False
 
