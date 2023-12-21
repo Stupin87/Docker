@@ -8,7 +8,7 @@
       apt:
         name:
           - update
-          -tomcat:9-jdk11
+          - tomcat:9-jdk11
           - git
           - maven        
         state: present
