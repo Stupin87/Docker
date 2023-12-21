@@ -38,8 +38,7 @@
   tasks:
    - name: Installing Packages
       apt:
-        name:
-          - tomcat9               
+        name: tomcat9               
         state: present
         
     - name: Copying a project
