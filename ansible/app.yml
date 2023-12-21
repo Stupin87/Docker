@@ -20,6 +20,7 @@
   tasks:
     - name: Cloning a repository
       git:
+        command: git init .
         repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
         dest: /home/keglia/
         version: master
