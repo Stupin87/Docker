@@ -1,7 +1,7 @@
 ---
 - name: Installing and configuring the environment
   hosts: build_node
-  become: true
+  become: yes
 
   tasks:
     - name: Installing Packages
@@ -15,7 +15,7 @@
 
 - name: Building a project
   hosts: build_node
-  become: true
+  become: yes
 
   tasks:
     - name: Cloning a repository
@@ -31,7 +31,7 @@
 
 - name: Project Launch
   hosts: app_node
-  become: true
+  become: yes
 
   tasks:
     - name: Copying a project
