@@ -36,6 +36,12 @@
   become: yes
 
   tasks:
+   - name: Installing Packages
+      apt:
+        name:
+          - tomcat9               
+        state: present
+        
     - name: Copying a project
       copy:
         src: /home/keglia_new/target/hello-1.0.war
