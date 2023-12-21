@@ -21,12 +21,12 @@
     - name: Cloning a repository
       git:
         repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-        dest: /tmp/
+        dest: /home/keglia/
         version: master
       register: git_clone_status
 
     - name: Building a project
-      command: mvn package /tmp/boxfuse-sample-java-war-hello
+      command: mvn package /home/keglia/boxfuse-sample-java-war-hello
       register: build_status
       changed_when: False
 
@@ -37,7 +37,7 @@
   tasks:
     - name: Copying a project
       copy:
-        src: /tmp/boxfuse-sample-java-war-hello/target/hello-1.0.war
+        src: /home/keglia/boxfuse-sample-java-war-hello/target/hello-1.0.war
         dest: /usr/local/tomcat/webapps
         delete: yes
 
