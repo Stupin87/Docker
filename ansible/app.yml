@@ -36,7 +36,7 @@
   become: yes
 
   tasks:
-   - name: Installing Packages
+   - name: Installing tomcat
       apt:
         name: tomcat9               
         state: present
