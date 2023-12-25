@@ -8,8 +8,8 @@
 
 - name: Building a project
   command: mvn package
-      args:
-         chdir: /home/keglia_new
+  args:
+    chdir: /home/keglia_new
   register: build_status
   changed_when: False
 
