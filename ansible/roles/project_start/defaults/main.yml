@@ -1,2 +1,3 @@
 ---
 # defaults file for project_start
+dest_folder: /var/lib/tomcat9/webapps

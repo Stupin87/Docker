@@ -1,10 +1,6 @@
 ---
 # tasks file for project_start
 - name: Copying a project
-  synchronize:
-    src: /home/keglia_new/target/hello-1.0.war
-    dest: /var/lib/tomcat9/webapps
-    remote_src: yes
-    delete: yes
+  copy: src=hello-1.0.war dest={{ dest_folder }}/hello-1.0.war  
   notify: 
      - restart tomcat 
