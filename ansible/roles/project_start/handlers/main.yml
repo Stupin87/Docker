@@ -1,2 +1,4 @@
 ---
 # handlers file for project_start
+- name: restart tomcat
+  service: name=tomcat9 state=restarted

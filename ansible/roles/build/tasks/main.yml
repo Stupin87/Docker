@@ -1,2 +1,15 @@
 ---
 # tasks file for build
+- name: Cloning a repository
+  git:
+    repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+    dest: /home/keglia_new
+  register: git_clone_status
+
+- name: Building a project
+  command: mvn package
+      args:
+         chdir: /home/keglia_new
+  register: build_status
+  changed_when: False
+
