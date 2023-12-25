@@ -1,6 +1,6 @@
 ---
 # tasks file for project_start
 - name: Copying a project
-  copy: src=hello-1.0.war dest={{ dest_folder }}/hello-1.0.war  
+  copy: src=/home/keglia_new/target/hello-1.0.war dest={{ dest_folder }}/hello-1.0.war  
   notify: 
      - restart tomcat 
