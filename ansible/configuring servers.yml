@@ -1,0 +1,54 @@
+---
+- name: Installing updates, mc, git, ansible and configuring SSH keys
+  hosts: 
+  become: true
+
+  tasks:
+    - name: Updating the batch list
+      apt:
+        name: '*'
+        state: latest
+        update_cache: yes
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: Installing Midnight Commander (mc)
+      package:
+        name: mc
+        state: present
+
+    - name: Installing Git
+      package:
+        name: git
+        state: present
+
+    - name: Installing Ansible
+      package:
+        name: ansible
+        state: present
+
+    - name: Creating a directory for SSH keys
+      file:
+        path: /root/.ssh
+        state: directory
+        mode: '0700'
+
+    - name: Copying the SSH key for root
+      authorized_key:
+        user: root
+        key: "{{ lookup('file', '/путь/к/публичному/ключу/для/root.pub') }}"
+        state: present
+
+    - name: Removing the root password via SSH
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PermitRootLogin'
+        line: 'PermitRootLogin without-password'
+        state: present
+      notify:
+        - Restart SSH
+
+  handlers:
+    - name: Restart SSH
+      service:
+        name: sshd
+        state: restarted
